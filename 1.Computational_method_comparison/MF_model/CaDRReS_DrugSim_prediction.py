@@ -7,7 +7,7 @@ from scipy import stats
 import pandas as pd
 from CaDRReS_DrugSim import load_model, predict_from_model
 
-prism_test = pd.read_csv("/volume/yihyun/drug/baseline_model/data/prism_test.csv", index_col="smiles")
+prism_test = pd.read_csv("/volume/yihyun/drug/baseline_model/data/prism_drugBlind_test.csv", index_col="smiles")
 prism_train = pd.read_csv("/volume/yihyun/drug/baseline_model/data/prism_train.csv", index_col="smiles")
 
 test_mol = prism_train.index.tolist() + prism_test.index.tolist()
