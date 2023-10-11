@@ -12,7 +12,7 @@ datadir = '/Users/yihyun/Code'
 # import training and testing data
 print("import training and testing data...")
 train_set = pd.read_csv(os.path.join(datadir, "drug_sensitivity_prediction/0.data/processed/prism_train.csv"), index_col="smiles")
-test_set = pd.read_csv(os.path.join(datadir, "drug_sensitivity_prediction/0.data/processed/prism_test.csv"), index_col="smiles")
+test_set = pd.read_csv(os.path.join(datadir, "drug_sensitivity_prediction/0.data/processed/prism_drugBlind_test.csv"), index_col="smiles")
 cell_line_ls = train_set.columns.tolist()
 train_mol_all = train_set.index.tolist()
 test_mol_all =  test_set.index.tolist()
