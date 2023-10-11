@@ -172,7 +172,7 @@ if __name__ == "__main__":
     with open("/volume/yihyun/drug/SMILESVec_model/data/smiles_test.vec", "rb") as f:
         test_vec = pickle.loads(f.read())
     # import auc data
-    test_set = pd.read_csv("/volume/yihyun/drug/baseline_model/data/prism_test.csv", index_col="smiles")
+    test_set = pd.read_csv("/volume/yihyun/drug/baseline_model/data/prism_drugBlind_test.csv", index_col="smiles")
     train_set = pd.read_csv("/volume/yihyun/drug/baseline_model/data/prism_train.csv", index_col="smiles")
     # define mask
     mask_df_test = (test_set.isna() == False).astype(int)
@@ -185,7 +185,7 @@ if __name__ == "__main__":
     for i in range(len(test_set)):
         dataset_test.append((torch.FloatTensor(test_vec[i]), 
         torch.LongTensor(mask_df_test.loc[mask_df_test.index[i]]), torch.FloatTensor(test_set.loc[test_set.index[i]])))
-    import torch
+
     data_train = []
     for i in range(len(train_set)):
         data_train.append((torch.FloatTensor(train_vec[i]), 
