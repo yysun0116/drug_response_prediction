@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 datadir = "/Users/yihyun/Code/"
-prism_both = pd.read_csv(os.path.join(datadir, "drug_sensitivity_prediction/0.data/processed/prism_test_molGNN_scdrug.csv"), index_col='smiles')
+prism_both = pd.read_csv(os.path.join(datadir, "drug_sensitivity_prediction/0.data/processed/prism_disjoint_test.csv"), index_col='smiles')
 prism_train = pd.read_csv(os.path.join(datadir, "drug_sensitivity_prediction/0.data/processed/prism_train.csv"), index_col='smiles')
 cadrres_pred = pd.read_csv(os.path.join(datadir, "drug_sensitivity_prediction/2.Combined_model_evaluation/2_1.CaDRReS_CLsim/CaDRReS_CLsim_cellblind_pred.csv"), index_col='smiles')
 # convert smiles encoding to fingerprints

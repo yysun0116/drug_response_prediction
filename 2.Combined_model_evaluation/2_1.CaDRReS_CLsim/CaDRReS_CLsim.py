@@ -514,8 +514,8 @@ if __name__ == "__main__":
     ccle_exp.columns = col_name
     ## drug response data
     prism_train = pd.read_csv(os.path.join(datadir, "drug_sensitivity_prediction/0.data/processed/prism_train.csv"), index_col = 'smiles')
-    prism_test = pd.read_csv(os.path.join(datadir, "drug_sensitivity_prediction/0.data/processed/prism_test.csv"), index_col = 'smiles')
-    prism_test_cl = pd.read_csv(os.path.join(datadir, "drug_sensitivity_prediction/0.data/processed/prism_test_scdrug.csv"), index_col = 'smiles')
+    prism_test = pd.read_csv(os.path.join(datadir, "drug_sensitivity_prediction/0.data/processed/prism_drugBlind_test.csv"), index_col = 'smiles')
+    prism_test_cl = pd.read_csv(os.path.join(datadir, "drug_sensitivity_prediction/0.data/processed/prism_cellBlind_test.csv"), index_col = 'smiles')
 
     # cell line kernel calculation
     log_feature_exp = np.log2(ccle_exp + 1).T
