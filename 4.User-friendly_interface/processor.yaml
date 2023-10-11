@@ -1,0 +1,64 @@
+name: SCPred
+image: master.corp.ailabs.tw/taigenomics/scpred:v1
+category: Single Cell
+version: scDrug Sensitivity_Pred v1
+
+options:
+  - name: REQUEST_MEMORY
+    optionType: string
+    required: true
+    defaultValue: 5G
+    description: 'Number of the memory request'
+  - name: REQUEST_CPU
+    optionType: string
+    required: true
+    defaultValue: 1
+    description: 'Number of cpu core request'
+  - name: CLUSTERS
+    optionType: string
+    required: false
+    defaultValue: 'None'
+    description: 'perform the prediction on specified clusters, e.g. 1,3,8,9'
+  - name: MODEL
+    optionType: string
+    required: true
+    defaultValue: 'PRISM'
+    description: 'The sensitivity screening is from GDSC ic50/PRISM auc, e.g. GDSC, PRISM' 
+  - name: N_DRUGS
+    optionType: int
+    required: true
+    defaultValue: 10
+    description: 'The number of drugs to visualize for each cluster.'
+  - name: DRUG_DISCOVERY
+    optionType: string
+    required: true
+    defaultValue: "FALSE"
+    description: 'whether to do drug discovery or not.'
+
+accessControl:
+  usableGroups: ["admin", "ailabs", "scdrug", "NTUH-HEMA"]
+  usableUsers: ["admin", "ailabs", "scdrug", "NTUH-HEMA"]
+
+res:
+  - filenameEnv: REF_CCLE
+    acceptableExtensions: ['.CCLE.csv']
+    required: true
+  - filenameEnv: REF_GDSC
+    acceptableExtensions: ['.GDSC.tsv']
+    required: true
+  - filenameEnv: REF_FEATURE
+    acceptableExtensions: ['.feature.txt']
+    required: true
+  - filenameEnv: REF_DRUG_INFO
+    acceptableExtensions: ['.druginfo.csv']
+    required: true
+
+in:
+  - filenameEnv: IN_FILE
+    acceptableExtensions: ['.h5ad']
+    required: true
+  - filenameEnv: NEW_DRUG
+    acceptableExtensions: ['.csv']
+    required: false
+out:
+  - dirnameEnv: OUT_DIR
