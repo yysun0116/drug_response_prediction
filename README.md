@@ -20,7 +20,7 @@ Author:
      - CaDRReS_CLsim: Drug response prediction on known compounds and unknown cell lines based on the similarity of cell lines (prediction of cell-blind testing set)
      - CaDRReS_CLsim_SVM: Drug response prediction on unknown compounds and unknown cell lines based on the similarity of molecular structure (prediction of disjoint testing set)
 3. Model_comparison  
-    Comparing the performance of the combined model with [Precily](https://github.com/SmritiChawla/Precily/tree/main)
+    Comparing the performance of the combined model with [Precily](https://github.com/SmritiChawla/Precily/tree/main) on external testing data
 4. User-friendly_interface  
     Developing a user-friendly drug response prediction tool using a Docker image
 5. Discussion  
